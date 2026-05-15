@@ -25,5 +25,5 @@ jobs:
       - name: Run bot
         env:
           DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
-          CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
+          TEST_ID: ${{ secrets.TEST_ID }}
         run: python test_message.py
