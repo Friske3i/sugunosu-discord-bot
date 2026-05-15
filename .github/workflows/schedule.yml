@@ -4,7 +4,7 @@ on:
   schedule:
     # UTC時間で設定（日本時間 18:00 は UTC 9:00）
     # 分 時 日 月 曜日 (0=日, 5=金)
-    - cron: '50 15 * * 5'
+    - cron: '45 15 * * 5'
   workflow_dispatch: # 手動実行ボタンも作る
 
 jobs:
