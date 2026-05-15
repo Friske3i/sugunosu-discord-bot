@@ -1,0 +1,29 @@
+name: Weekly Schedule Bot
+
+on:
+  schedule:
+    # UTC時間で設定（日本時間 18:00 は UTC 9:00）
+    # 分 時 日 月 曜日 (0=日, 5=金)
+    - cron: '0 9 * * 5'
+  workflow_dispatch: # 手動実行ボタンも作る
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install discord.py
+
+      - name: Run bot
+        env:
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+          CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
+        run: python send_message.py
