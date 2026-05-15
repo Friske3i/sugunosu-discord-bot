@@ -9,7 +9,15 @@ CHANNEL_ID = int(os.getenv('TEST_ID'))
 
 # 日本時間のタイムゾーン
 JST = datetime.timezone(datetime.timedelta(hours=9))
-REACTIONS = [':one:', ':two:', ':three:', ':four:', ':five:', ':six:', ':seven:']
+REACTIONS = [
+    "1\uFE0F\u20E3",
+    "2\uFE0F\u20E3",
+    "3\uFE0F\u20E3",
+    "4\uFE0F\u20E3",
+    "5\uFE0F\u20E3",
+    "6\uFE0F\u20E3",
+    "7\uFE0F\u20E3"
+]
 
 def get_next_week_dates():
     today = datetime.datetime.now(JST).date()
